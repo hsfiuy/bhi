@@ -29,11 +29,20 @@ function my_keydown(e)
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
 	
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
+		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90)){
 		aplhabetkey();
 		document.getElementById("d1").innerHTML="you pressed apabet key";
 		console.log("alphabet kay");//write a code to check the type of key pressed
-		else{
+		} else if(keyPressed>=48 && keyPressed<=57){
+		numberkey();
+		document.getElementById("d1").innerHTML="You pressed number";
+		} else if(keyPressed <= 37 && keyPressed >= 40){
+			arrowkey();
+			document.getElementById("d1").innerHTML="you presses arrow keys";
+		 }else if((keyPressed = 17) || (keyPressed=18) || (keyPressed = 27)){
+			specialkey();
+			document.getElementById("d1").innerHTML="you pressed spectal key";
+		}else{
 		otherkey();
 		document.getElementById("d1").innerHTML="You pressed symbol or other key";
 	}
